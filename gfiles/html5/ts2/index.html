@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)https://timeshooter.application08.repl.co/ -->
-<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <title>Time Shooter 2</title>
-    <link rel="shortcut icon" href="https://timeshooter.application08.repl.co/favicon.ico">
-    <link rel="stylesheet" href="./ts2_files/style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body class="dark">
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" style="background: url(&quot;TimeShooter2_Yandex.jpg&quot;) center center / cover;"></canvas>
+      <canvas id="unity-canvas"></canvas>
     </div>
-    <div id="loading-cover" style="">
+    <div id="loading-cover" style="display:none;">
       <div id="unity-loading-bar">
-        <div id="unity-logo"><img src="./ts2_files/logo.png"></div>
-        <div id="unity-progress-bar-empty" style="">
-          <div id="unity-progress-bar-full" style="width: 34.3486%;"></div>
+        <div id="unity-logo"><img src="logo.png"></div>
+        <div id="unity-progress-bar-empty" style="display: none;">
+          <div id="unity-progress-bar-full"></div>
         </div>
-        <div class="spinner" style="display: none;"></div>
+        <div class="spinner"></div>
       </div>
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
@@ -90,8 +90,8 @@
         });
       };
       document.body.appendChild(script);
-    </script><script src="./ts2_files/TimeShooter2_Yandex.loader.js.download"></script>
-    <script src="https://yandex.ru/games/sdk/v2"></script><script src="blob:https://timeshooter.application08.repl.co/ae3a3301-d818-4a3b-84af-134850d1b6bc"></script>
+    </script>
+    <script src="https://yandex.ru/games/sdk/v2"></script>
 
     <script type="text/javascript">
       var player = null;
@@ -281,6 +281,5 @@
         })
       }
     </script>
-  
-
-</body></html>
+  </body>
+</html>
