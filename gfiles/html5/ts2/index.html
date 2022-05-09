@@ -99,11 +99,6 @@
       var payments = null;
   
       YaGames.init({
-        adv: {
-          onAdvClose: wasShown => {
-            console.info('adv closed!');
-          }
-        }
       })
         .then(ysdk => {
           sdk = ysdk;
@@ -111,7 +106,7 @@
             player = _player;
           }).catch(err => {
           });
-          sdk.adv.showFullscreenAdv({ callbacks: {} });
+          callbacks: {}
         });
 
       function checkCom()
@@ -239,15 +234,6 @@
       }
     </script>
   
-  
-    <script>
-      function showFullscrenAd() {
-        sdk.adv.showFullscreenAdv({
-          callbacks: {}
-        })
-      }
-    </script>
-  
     <script>
       function rate() {
         sdk.feedback.canReview()
@@ -266,19 +252,7 @@
   
     <script>
       function showRewardedAd(id) {
-        sdk.adv.showRewardedVideo({
-          callbacks: {
-            onOpen: () => {
-            },
-            onRewarded: () => {
-              window.unityInstance.SendMessage('GameManager', 'RewardComplete', id);
-            },
-            onClose: () => {
-            },
-            onError: (e) => {
-            }
-          }
-        })
+        window.unityInstance.SendMessage('GameManager', 'RewardComplete', id);
       }
     </script>
   </body>
