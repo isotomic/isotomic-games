@@ -1,186 +1,134 @@
-
 <!DOCTYPE html>
-<script src="nc/script.min.js"></script><html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Zombs Royale - 100 Player 2D Real-Time Battle Royale</title>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
-    <link rel="stylesheet" href="asset/app.css" type="text/css">
-    <link rel="icon" href="favicon.ico">
-    <meta name="description" content="Play ZombsRoyale.io - 100 player 2D real-time massive multiplayer Battle Royale game in your browser, inspired by PUBG/Fortnite.">
-    <script>
-        window.factorem = {};
-        window.factorem.slotSizes =  [
-            [[728, 90]],
-            [[300, 250]],
-            [[300, 250]],
-            [[728, 90]],
-            [[728, 90]],
-            [[300, 250]],
-            [[160, 600]],
-            [[160, 600]],
-        ];
-    </script>
-    <script>
-        window.ga = function(){};
-        (function() {
-            var origOpen = XMLHttpRequest.prototype.open;
-            XMLHttpRequest.prototype.open = function(...args) {
-                if(args[1].includes('://zombsroyale.io/api/')){
-                    args[1] = 'https://onebigorange-tmm.tbt.mx/normal/'+args[1];
-                }
-                if(args[1][0] === '/'){
-                    args[1] = args[1].slice(1);
-                }
-                origOpen.apply(this, args);
-            };
-        })();
-        WebAssembly.instantiateStreaming = async function(...args){
-            var response = await args[0];
-            return WebAssembly.instantiate(await response.arrayBuffer());
-        };
-        window.realFetch = window.fetch;
-        window.fetch = function(...args){
-            if(args[0][0] === '/'){
-                args[0] = args[0].slice(1);
-            }
-            return window.realFetch(...args);
-        };
-        // (async function(){
-        //     const dbs = await window.indexedDB.databases();
-        //     dbs.forEach(db => window.indexedDB.deleteDatabase(db.name));
-        // })();
-        window.rWS = window.WebSocket;
-        WebSocket = function(url){
-            var split = url.split('://');
-            
-            var prefix = '';
-            switch(split[0].toLowerCase()){
-                case 'ws': prefix='wss://onebigorange-tmm.tbt.mx/websocket/http://';break;
-                case 'wss': prefix='wss://onebigorange-tmm.tbt.mx/websocket/https://';break;
-                default: prefix = split[0];
-            }
-            try {
-                (document.getElementsByClassName('ad-unit') || []).forEach(function(e){if (e.parentElement) e.parentElement.removeChild(e);});
-            } catch (e) {
-                console.error(e);
-            }
-            return new (Function.prototype.bind.call(window.rWS, null, (split[1].match(/\//g) || []).length === 0?(split[1].includes('?')?prefix+split[1].replace('?', '/?'):prefix+split[1]+'/'):prefix+split[1]));
-        };
-        // setInterval(function() {(document.getElementsByClassName('ad-unit') || []).forEach(function(e){if (e.parentElement) e.parentElement.removeChild(e);});}, 1000);
-        window.alert = console.error;
-    </script>
-</head>
+<!-- saved from url=(0059)https://games.crazygames.com/en_US/zombsroyaleio/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style data-emotion="css-global" data-s=""></style><style data-emotion="css" data-s=""></style><title>Zombs Royale (ZombsRoyale.io) Game Files - Crazy Games</title><link href="./index_files/crazygames-gameframe-v1.bundle.js.download" rel="preload" as="script"><link href="https://www.crazygames.com/game/zombsroyaleio" rel="canonical"><meta name="robots" content="noindex, follow"><meta name="description" content="The game files for Zombs Royale (ZombsRoyale.io), a free browser game on CrazyGames.com"><meta http-equiv="Accept-CH" content="DPR"><meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui"><script type="text/javascript" async="" src="./index_files/f.txt"></script><script async="" src="./index_files/apstag.js.download"></script><script async="" src="./index_files/analytics.js.download"></script><script type="text/javascript" src="./index_files/crazygames-gameframe-v1.bundle.js.download" async=""></script><script src="./index_files/f(1).txt"></script></head><body><script type="text/javascript">function loadScript(url, callback) {
+  var head = document.head;
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = url;
+  script.async = true;
+  script.onreadystatechange = callback;
+  script.onload = callback;
+  head.appendChild(script);
+}
+var options = {"loader":"iframe","loaderOptions":{"url":"https://zombsroyale.io"},"author":"Yang and Jeremiah","thumbnail":"https://images.crazygames.com/games/zombsroyaleio/cover-1587299840102.png?auto=format,compress&q=75&cs=strip&w=360","gameName":"Zombs Royale (ZombsRoyale.io)","gameHttps":true,"gameSlug":"zombsroyaleio","gameId":"15099","gameStatus":"published","showAdOnExternal":"NEVER","showAdOnInternal":"DEFAULT","disableEmbedding":false,"dollarRate":0.9474793260011067,"upvotes":231644,"downvotes":27325,"releaseDate":"2018-03-24","locale":"en_US","controls":{"mouse":{"left":{"en_US":"Shoot"},"right":{"en_US":"Open emoticon list"}},"keyboard":[{"keys":["WASD"],"label":{"en_US":"Move"}},{"keys":["ARROWS"],"label":{"en_US":"Move"}},{"keys":["M","TAB"],"label":{"en_US":"View Map"}},{"keys":["E"],"label":{"en_US":"Interact"}},{"keys":["R"],"label":{"en_US":"Reload"}},{"keys":["T"],"label":{"en_US":"Spray"}}]},"videoThumbnail":"https://videos.crazygames.com/zombsroyaleio/2/zombsroyaleio-180x111.mp4","video":{"original":"https://videos.crazygames.com/zombsroyaleio/2/zombsroyaleio.mp4","sizes":[{"width":180,"height":111,"location":"https://videos.crazygames.com/zombsroyaleio/2/zombsroyaleio-180x111.mp4"},{"width":360,"height":222,"location":"https://videos.crazygames.com/zombsroyaleio/2/zombsroyaleio-360x222.mp4"},{"width":540,"height":333,"location":"https://videos.crazygames.com/zombsroyaleio/2/zombsroyaleio-540x333.mp4"},{"width":720,"height":444,"location":"https://videos.crazygames.com/zombsroyaleio/2/zombsroyaleio-720x444.mp4"}]},"sandbox":true,"minTimeBetweenMidrollAdsInMs":180000,"minTimeBetweenRewardedAdsInMs":5000,"noMidrollAdInFirstMinutes":3,"noRewardedAdInFirstMinutes":0,"categoryEnSlug":"io","tagsEnSlugs":["webgl","top-down","battle","with-friends","zombie","gun","weapon","survive","battle-royale","multiplayer"],"isKids":false,"hasMidroll":false,"hasRewarded":false,"fullscreen":"SUPPORTED","orientation":null,"category":"Battle Royale (Fortnite.io)","categoryLink":"https://www.crazygames.com/t/battle-royale","gameLink":"https://www.crazygames.com/game/zombsroyaleio","alternativeGames":[{"category":".io","gameSlug":"shellshockersio","gameName":"Shell Shockers","rating":9.2,"thumbnail":"https://images.crazygames.com/shellshockersio/20211202050253/shellshockersio-cover?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/shellshockersio/2/shellshockersio-180x111.mp4","gameLink":"https://www.crazygames.com/game/shellshockersio","loader":"iframe"},{"category":".io","gameSlug":"smash-karts","gameName":"Smash Karts","rating":8.9,"thumbnail":"https://images.crazygames.com/smash-karts/20201119155032/smash-karts-cover?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/smash-karts/10/smash-karts-180x111.mp4","gameLink":"https://www.crazygames.com/game/smash-karts","loader":"iframe"},{"category":".io","gameSlug":"buildroyale-io","gameName":"Build Royale","rating":8.8,"thumbnail":"https://images.crazygames.com/games/buildroyale-io/cover-1588144107089.png?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/buildroyale-io/1/buildroyale-io-180x111.mp4","gameLink":"https://www.crazygames.com/game/buildroyale-io","loader":"iframe"},{"category":".io","gameSlug":"voxiom-io","gameName":"Voxiom.io","rating":9,"thumbnail":"https://images.crazygames.com/voxiom-io/20201028120539/voxiom-io-cover?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/voxiom-io/1/voxiom-io-thumbnail.mp4","gameLink":"https://www.crazygames.com/game/voxiom-io","loader":"iframe"},{"category":".io","gameSlug":"rocket-bot-royale","gameName":"Rocket Bot Royale","rating":8.9,"thumbnail":"https://images.crazygames.com/rocket-bot-royale/20220310095708/rocket-bot-royale-cover?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/rocket-bot-royale/2/rocket-bot-royale-180x111.mp4","gameLink":"https://www.crazygames.com/game/rocket-bot-royale","loader":"iframe"},{"category":".io","gameSlug":"royaledudes-io","gameName":"RoyaleDudes.io","rating":9,"thumbnail":"https://images.crazygames.com/royaledudes-io/20220110094533/royaledudes-io-cover?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/royaledudes-io/1/royaledudes-io-180x111.mp4","gameLink":"https://www.crazygames.com/game/royaledudes-io","loader":"iframe"},{"category":".io","gameSlug":"merc-zone","gameName":"Merc Zone","rating":8.9,"thumbnail":"https://images.crazygames.com/games/merc-zone/cover-1614702000604.png?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/merc-zone/4/merc-zone-180x111.mp4","gameLink":"https://www.crazygames.com/game/merc-zone","loader":"iframe"},{"category":".io","gameSlug":"stabfish2-io-multiplayer","gameName":"Stabfish 2","rating":8.1,"thumbnail":"https://images.crazygames.com/stabfish2-io-multiplayer/20210910102403/stabfish2-io-multiplayer-cover?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/stabfish2-io-multiplayer/1/stabfish2-io-multiplayer-thumbnail.mp4","gameLink":"https://www.crazygames.com/game/stabfish2-io-multiplayer","loader":"iframe"},{"category":".io","gameSlug":"mini-royale-nations","gameName":"Mini Royale: Nations","rating":9.2,"thumbnail":"https://images.crazygames.com/games/miniroyale-2-battle-royale-game/cover-1635856503946.png?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/miniroyale-2-battle-royale-game/3/miniroyale-2-battle-royale-game-180x111.mp4","gameLink":"https://www.crazygames.com/game/mini-royale-nations","loader":"iframe"},{"category":".io","gameSlug":"survivio","gameName":"Surviv.io (Survivio)","rating":9,"thumbnail":"https://images.crazygames.com/games/survivio/cover-1587299616843.png?auto=format,compress&q=75&cs=strip&w=360","videoThumbnail":"https://videos.crazygames.com/survivio/2/survivio-180x111.mp4","gameLink":"https://www.crazygames.com/game/survivio","loader":"iframe"}],"domainHasNoCMP":false};
+var SDK_READY = false;
+var GF_READY = false;
+var GF_LOAD_CALLED = false;
+loadScript("https://gameframe.crazygames.com/crazygames-gameframe-v1.bundle.js", function() {
+    Crazygames.load(options).then(function() {
+      var pacmanWrapper = document.getElementById('pacman');
+      var pacmanStyles = document.getElementById('pacman-styles');
 
-<body class="home">
-    <div class="home-loading">
-        <div class="home-loading-props">
-            <div class="home-loading-tree"></div>
-            <div class="home-loading-tree"></div>
-            <div class="home-loading-tree"></div>
-            <div class="home-loading-player-scar"></div>
-            <div class="home-loading-player-regular"></div>
-        </div>
-        <div class="home-loading-logo"></div>
-        <div class="home-loading-tiers">
-            <span class="tier-common"></span>
-            <span class="tier-uncommon"></span>
-            <span class="tier-rare"></span>
-            <span class="tier-epic"></span>
-            <span class="tier-legendary"></span>
-            <span class="tier-mythic"></span>
-        </div>
-        <div class="home-loading-tip">Tip: Pick up higher quality weapons if you can, they pack more of a punch!</div>
-        <div class="home-loading-help">
-            <div class="help-box">
-                <span class="help-box-images">
-                    <span class="help-box-image help-box-image-left" style="background-image:url('asset/image/help-one-left.png');"></span>
-                <span class="help-box-image help-box-image-right" style="background-image:url('asset/image/help-one-right.png');"></span>
-                </span>
-                <span class="help-box-label">
-                    <p><strong>WASD</strong> or <strong>Arrow Keys</strong> to move</p>
-                    <p><strong>Left Mouse</strong> to fire</p>
-                </span>
-            </div>
-            <div class="help-box">
-                <span class="help-box-images">
-                    <span class="help-box-image help-box-image-left" style="background-image:url('asset/image/help-two-left.png');"></span>
-                <span class="help-box-image help-box-image-right" style="background-image:url('asset/image/help-two-right.png');"></span>
-                </span>
-                <span class="help-box-label">
-                    <p>Break shiny boxes to get loot</p>
-                </span>
-            </div>
-            <div class="help-box">
-                <span class="help-box-images">
-                    <span class="help-box-image help-box-image-left" style="background-image:url('asset/image/help-three-left.png');"></span>
-                <span class="help-box-image help-box-image-right" style="background-image:url('asset/image/help-three-right.png');"></span>
-                </span>
-                <span class="help-box-label">
-                    <p>Press <strong>E</strong> to open doors</p>
-                </span>
-            </div>
-            <div class="help-box">
-                <span class="help-box-images">
-                    <span class="help-box-image help-box-image-left" style="background-image:url('asset/image/help-four-left.png');"></span>
-                <span class="help-box-image help-box-image-right" style="background-image:url('asset/image/help-four-right.png');"></span>
-                </span>
-                <span class="help-box-label">
-                    <p>Press <strong>E</strong> to interact and loot chests</p>
-                </span>
-            </div>
-        </div>
-    </div>
-    <script src="asset/app.js"></script>
-    <script src="asset/build/UnityLoader.js"></script>
-    <script>
-        fetch('https://onebigstatic-tmm.tbt.mx/shortstatic/https://zombsroyale.io/build/webgl?rand='+Date.now()).then(async response=>{
-            function timeout(ms, promise) {
-                return new Promise((resolve, reject) => {
-                    const timer = setTimeout(() => {
-                        reject(new Error('TIMEOUT'))
-                    }, ms)
-        
-                    promise
-                        .then(value => {
-                            clearTimeout(timer)
-                            resolve(value)
-                        })
-                        .catch(reason => {
-                            clearTimeout(timer)
-                            reject(reason)
-                        })
-                })
-            }
-            var endpoint = 'thesuperstatic.gq';
-            var didFail = false;
-            try {
-                if (await (await timeout(4000, fetch('https://thesuperstatic.gq/cc'))).text() !== 'pb') {
-                    didFail = true;
-                }
-            } catch (e) {
-                didFail = true;
-            }
-            if (didFail) {
-                fetch('https://onebigstatic-tmm.tbt.mx/counter/increment?tag=' + encodeURIComponent('onebigstatic'));
-                endpoint = 'onebigstatic-tmm.tbt.mx';
-            } else {
-                fetch('https://onebigstatic-tmm.tbt.mx/counter/increment?tag=' + encodeURIComponent('thesuperstatic'));
-            }
-            
-            var jsonBlob = new Blob([(await response.text()).replace(/:"\\\//g, ':"https://' + endpoint + '/staticsensitive/https://zombsroyale.io/')], {type: 'application/json'});
-            var game = new Game({
-                stage: 'prod',
-                endpoint: 'zombsroyale',
-                userData: false,
-                buildJsonUrl: window.URL.createObjectURL(jsonBlob),
-            });
-    
-            game.init(function() {
-                console.log('Ready to launch!');
-            });
-        });
-    </script>
-</body>
-</html>
+      if (pacmanWrapper && pacmanStyles) {
+        pacmanWrapper.remove();
+        pacmanStyles.remove();
+      }
+    });
+});</script><div><style>
+                  a {
+                    text-decoration: none;
+                  }
+                  a:hover {
+                    text-decoration: none;
+                  }
+                </style><div class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap css-8fatgk"><div class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column css-g5y5xi"><a href="https://www.crazygames.com/?utm_source=https%3A%2F%2Fgames.crazygames.com%2Fen_US%2Fzombsroyaleio%2Findex.html&amp;utm_medium=game_frame&amp;utm_campaign=zombsroyaleio&amp;utm_content=overlay-logo" target="_blank" id="external-playMoreGames-link"><div class="MuiGrid-root MuiGrid-container css-nxff6b"><div class="MuiGrid-root MuiGrid-item css-1wxaqej" style="height: 100%;"><img src="./index_files/logo_white_transparent_sm.png" alt="CrazyGames" style="width: 90px;"></div></div></a></div><div class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column css-128emgq" style="flex: 1 1 0%; overflow: hidden;"><div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-8rl41i"><div class="MuiGrid-root MuiGrid-container css-1d3bbye"><div class="MuiGrid-root MuiGrid-item css-b3hz7e"><span><div class="thumbnailContainer css-p06i1z"><div style="width: 100%; height: 100%;"><video autoplay="" loop="" class="video" style="height: 100%; width: 100%; filter: drop-shadow(rgba(0, 0, 0, 0.5) 0px 2px 4px); position: relative; z-index: 1; object-fit: cover;"><source src="https://videos.crazygames.com/zombsroyaleio/2/zombsroyaleio-720x444.mp4" type="video/mp4"></video></div></div></span></div><div class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column css-2v77eb"><div class="MuiGrid-root MuiGrid-item css-1wxaqej"><span><div class="gameTitle css-o0t7us">Zombs Royale (ZombsRoyale.io)</div></span><a href="https://www.crazygames.com/t/battle-royale" target="_blank" rel="noopener noreferrer"><span class="MuiTypography-root MuiTypography-caption gameCategory css-hs1qq1" style="color: white; opacity: 0.5; text-transform: uppercase; letter-spacing: 8px;">Battle Royale (Fortnite.io)</span></a></div><span><div class="MuiGrid-root MuiGrid-item css-nz12qn"><div class="css-ekhola" style="margin: auto;">Play Now<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium arrow css-slxgo" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ChevronRightIcon"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></div></div></span></div></div></div></div></div><div style="display: none;"><div class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-wrap-xs-nowrap css-8fatgk"><div class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column css-128emgq" style="flex: 1 1 0%; overflow: hidden;"><div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;"><div class="css-pm3bzd"><video id="videoContent" playsinline="" class="css-1xf7bua" muted=""></video><div style="width: 100%; height: 100%;"><div class="MuiGrid-root MuiGrid-container css-lsmwr7"><div class="MuiGrid-root MuiGrid-item css-1wxaqej"><div class="loader loader-undefined loader-active"><div class="loader-inner pacman"><div></div><div></div><div></div><div></div><div></div></div></div></div><style>
+body {
+  background-image: linear-gradient(290deg, rgb(59, 43, 115) 55%, rgb(111, 47, 147), #6f2f93);
+  background-position: center;
+  text-align: center;
+}
+/* for positioning of pacman loader */
+body, html { height: 100%; }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rotate_pacman_half_up {
+  0% {
+    transform: rotate(270deg); }
+  50% {
+    transform: rotate(360deg); }
+  100% {
+    transform: rotate(270deg); }
+}
+
+@keyframes rotate_pacman_half_down {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes pacman-balls {
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-100px, -6.25px);
+  }
+}
+
+.pacman {
+  position: relative;
+}
+.pacman > div:nth-child(2) {
+  animation: pacman-balls 1s -0.99s infinite linear;
+}
+.pacman > div:nth-child(3) {
+  animation: pacman-balls 1s -0.66s infinite linear;
+}
+.pacman > div:nth-child(4) {
+  animation: pacman-balls 1s -0.33s infinite linear;
+}
+.pacman > div:nth-child(5) {
+  animation: pacman-balls 1s 0s infinite linear;
+}
+.pacman > div:first-of-type {
+  width: 0px;
+  height: 0px;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #fff;
+  border-left: 25px solid #fff;
+  border-bottom: 25px solid #fff;
+  border-radius: 25px;
+  animation: rotate_pacman_half_up 0.5s 0s infinite;
+  position: relative;
+  left: -30px;
+}
+.pacman > div:nth-child(2) {
+  width: 0px;
+  height: 0px;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #fff;
+  border-left: 25px solid #fff;
+  border-bottom: 25px solid #fff;
+  border-radius: 25px;
+  animation: rotate_pacman_half_down 0.5s 0s infinite;
+  margin-top: -50px;
+  position: relative;
+  left: -30px;
+}
+.pacman > div:nth-child(3),
+.pacman > div:nth-child(4),
+.pacman > div:nth-child(5),
+.pacman > div:nth-child(6) {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  transform: translate(0, -6.25px);
+  top: 25px;
+  left: 70px;
+}
+</style></div></div></div></div></div></div></div><link href="./index_files/css" rel="stylesheet"></div><script src="./index_files/rafvertizing-v6.js.download" async=""></script><script src="./index_files/js" async=""></script><script src="./index_files/ima3.js.download" async=""></script><script src="./index_files/prebid.js.download" async=""></script><script src="./index_files/prebid-v6.js.download" async=""></script><script src="./index_files/gpt.js.download" async=""></script></body></html>
