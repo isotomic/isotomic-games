@@ -1,6 +1,52 @@
-<script src="/gfiles/pico8/player.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function(event) { 
-	PicoPlayer('container', 'https://lexaloffle.com/bbs/cposts/te/terra_1cart-36.p8.png');
-    });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>PICO-Player</title>
+		<!-- Meta Tags -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheet -->
+    <style>
+      html, body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        background: #ffffff;
+      }
+      .wrapper {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      canvas {
+        border: 0px;
+        width: 512px;
+        height: 512px;
+        background: black;
+        image-rendering: optimizeSpeed;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+        image-rendering: pixelated;
+        -ms-interpolation-mode: nearest-neighbor;
+      }
+    </style>
+	</head>
+	<body>
+		<!-- Wrapper -->
+		<div class="wrapper">
+			<!-- Web Player -->
+			<div id="pico-container"></div>
+		</div>
+		<!-- Script -->
+		<script src="/gfiles/pico8/player.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event) {
+				PicoPlayer('pico-container', 'https://lexaloffle.com/bbs/cposts/te/terra_1cart-36.p8.png');
+			});
+		</script>
+	</body>
+</html>
