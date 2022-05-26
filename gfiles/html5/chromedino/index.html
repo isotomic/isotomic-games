@@ -1728,10 +1728,6 @@ function diagnoseErrors() {
 // mechanisms (Currently just iOS). We also use the subframe style for portals
 // as they are embedded like subframes and can't be interacted with by the user.
 let isSubFrame = false;
-if (window.top.location !== window.location || window.portalHost) {
-  document.documentElement.setAttribute('subframe', '');
-  isSubFrame = true;
-}
 
 // Re-renders the error page using |strings| as the dictionary of values.
 // Used by NetErrorTabHelper to update DNS error pages with probe results.
