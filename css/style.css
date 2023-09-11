@@ -67,22 +67,3 @@ body {
 	background-color: #eeeeee;
 	text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
-
-       .background--custom {
-      background: linear-gradient(90deg, #6470f5, #693295, #b1c4f4);
-      background-size: 300% 300%;
-      animation: gradient 4s alternate infinite;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-    }
-    @keyframes gradient {
-      0% {
-        background-position: 0%;
-      }
-      100% {
-        background-position: 100%;
-      }
-    }
